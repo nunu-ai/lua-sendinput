@@ -64,7 +64,7 @@ function M.mouse_move(x, y, absolute)
     if absolute == nil then absolute = true end
     local flags = M._ME_MOVE
     if absolute then
-        flags = bit.bor(flags, M._ME_ABSOLUTE)
+        flags = (flags|M._ME_ABSOLUTE)
         x, y = M.s2m(x, y)
     end
     winapi.send_mouse_input(x, y, flags)
@@ -121,7 +121,7 @@ end
 -- http://msdn.microsoft.com/en-us/library/windows/desktop/ms646271(v=vs.85).aspx
 M._KE_KEYUP = 0x0002
 M._KE_SCANCODE = 0x0008
-M._KE_SCANCODE_KEYUP = bit.bor(M._KE_KEYUP, M._KE_SCANCODE)
+M._KE_SCANCODE_KEYUP = (M._KE_KEYUP|M._KE_SCANCODE)
 -- mouse event
 -- http://msdn.microsoft.com/en-us/library/windows/desktop/ms646273(v=vs.85).aspx
 M._ME_MOVE = 0x0001
