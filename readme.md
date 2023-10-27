@@ -1,5 +1,15 @@
 ## SendInput
 
+## Nunu Installation
+- Get the winapi.dll (you get this by compiling winapi from our repo) and then put it in this repo
+
+To test:
+- Open Notepad and save it as mygame.txt
+- execute: lua _test_sendinput.lua
+
+
+## Original Installation
+
 Send mouse and keyboard events with lua in Windows.
 
 Requires a modified version of Steve Donovan's winapi module:
